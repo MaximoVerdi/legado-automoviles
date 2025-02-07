@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import "./heroSection.css";
+import "./heroSection.css"
 import "./index.css";
 import '@fontsource/montserrat'; // Fuente normal
 import '@fontsource/montserrat/700.css'; // Fuente en negrita
@@ -33,10 +33,10 @@ const HeroSection = () => {
         <span ref={typedRef}></span>
       </h2>
       <p>Realizamos toda la preparación previa a la venta y los trámites legales necesarios!</p>
-      <button className="hero__btn">Contactanos por Info</button>
+      {/* <button className="hero__btn">Contactanos</button> */}
 
     </section>
   );
 };
 
-export default HeroSection;
+export { HeroSection };

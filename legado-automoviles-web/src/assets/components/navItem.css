@@ -1,0 +1,30 @@
+.header__nav-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    list-style: none;
+    padding: 12px 0;
+}
+
+.header__nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1.2px;
+    background-color: var(--color-azul);
+    margin: auto;
+    margin-top: 20px;
+    transition: .6s;
+}
+
+.header__nav-item:hover::after {
+    width: 100%;
+}
+
+.header__nav-item a {
+    color: var(--color-azul);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1em;
+    user-select: none;
+}
