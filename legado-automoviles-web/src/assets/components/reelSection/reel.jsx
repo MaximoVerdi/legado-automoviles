@@ -1,4 +1,4 @@
-import './index.css'
+import '../index.css'
 import "./reel.css";
 
 function Reel(props) {

@@ -4,10 +4,10 @@
     align-items: center;
     position: fixed;
     z-index: 2;
-    bottom: 100px;
+    bottom: 90px;
     right: 25px;
-    height: 4em;
-    min-width: 4em;
+    height: 3.6em;
+    min-width: 3.6em;
     background: #FF7A00;
     color: inherit;
     border-radius: 50%;
@@ -24,9 +24,9 @@
 }
 
 .instagram-container i {
-    margin-top: 3px;
+    margin-top: 1px;
     color: #fff;
-    font-size: 3.3em;
+    font-size: 3em;
 }
 
 .instagram-container:hover {

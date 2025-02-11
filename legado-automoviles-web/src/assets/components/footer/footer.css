@@ -1,0 +1,7 @@
+.footer {
+
+    background-color: var(--color-azul-oscuro);
+    color: white;
+    padding: 30px 50px;
+    text-align: center;
+}

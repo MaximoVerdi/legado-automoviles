@@ -1,5 +1,5 @@
 import "./service.css";
-import "./index.css";
+import "../index.css";
 
 function Service(props) {
 

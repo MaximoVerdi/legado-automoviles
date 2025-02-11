@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import "./heroSection.css"
-import "./index.css";
+import "../index.css";
 import '@fontsource/montserrat'; // Fuente normal
 import '@fontsource/montserrat/700.css'; // Fuente en negrita
 

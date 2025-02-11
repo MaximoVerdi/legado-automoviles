@@ -1,6 +1,6 @@
 import './aboutUs.css'
-import './index.css'
-import Owners from "../images/owners.jpg";
+import "../index.css"
+import Owners from "../../images/owners.jpg"
 
 function AboutUs() {
     return (

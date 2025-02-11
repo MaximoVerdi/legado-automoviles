@@ -1,13 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import "./index.css"
+import "../index.css"
 import '@fontsource/vazirmatn';
 import '@fontsource/vazirmatn/700.css';
 import "boxicons/css/boxicons.min.css";
-import BmVideo from "../bm.mp4"
-import UpVideo from "../up.mp4"
-import AudiVideo from "../audi.mp4"
-import { Header, HeroSection, Service, Reel, Whatsapp, Instagram, Counter, AboutUs } from "./componentex.jsx"
+import BmVideo from "../../../assets/Bm.webm";
+import UpVideo from "../../../assets/Up.webm";
+import AudiVideo from "../../../assets/Audi.webm";
+import { Header, HeroSection, Service, Reel, Whatsapp, Instagram, Counter, AboutUs, Footer } from "../componentex.jsx"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -31,11 +31,13 @@ createRoot(document.getElementById('root')).render(
 
     <section id="experience" className="stats">
       <div className="stats-container">
-      <Counter target={6} label="Años de experiencia" />
-      <Counter target={22} label="Clientes satisfechos" />
-      <Counter target={12} label="Vehiculos en stock" />
+      <Counter target={58} label="Años de experiencia" />
+      <Counter target={220} label="Clientes satisfechos" />
+      <Counter target={122} label="Vehiculos en stock" />
       </div>
     </section>
     <AboutUs />
+
+    <Footer />
   </StrictMode>
 )

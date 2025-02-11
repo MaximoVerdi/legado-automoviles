@@ -6,8 +6,8 @@
     z-index: 2;
     bottom: 25px;
     right: 25px;
-    height: 4em;
-    min-width: 4em;
+    height: 3.6em;
+    min-width: 3.6em;
     background: #25d366;
     color: inherit;
     border-radius: 50%;
@@ -25,7 +25,8 @@
 
 .whatsapp-container i {
     color: #fff;
-    font-size: 3.3em;
+    font-size: 3em;
+    margin-top: -2px;
 }
 
 .whatsapp-container:hover {

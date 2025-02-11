@@ -1,11 +1,13 @@
 // components.js
-import { Header } from './header.jsx';
-import { HeroSection } from "./heroSection.jsx";
-import { Service } from "./service.jsx";
-import { Reel } from "./reel.jsx";
-import { Whatsapp } from "./whatsapp.jsx";
-import { Instagram } from "./instagram.jsx";
-import { Counter } from "./scrollEffect.jsx";
-import { AboutUs } from "./aboutUs.jsx";
+import { Header } from "./header/header.jsx";
+import { HeroSection } from "./heroSection/heroSection.jsx";
+import { Service } from "./serviceSection/service.jsx";
+import { Reel } from "./reelSection/reel.jsx";
+import { Whatsapp } from "./whatsApp/whatsapp.jsx";
+import { Instagram } from "./instagram/instagram.jsx";
+import { Counter } from "./scrollEffect/scrollEffect.jsx";
+import { AboutUs } from "./aboutUs/aboutUs.jsx";
+import { Footer } from "./footer/footer.jsx";
+import { FilterSection } from "./filter-section.jsx";
 
-export { Header, HeroSection, Service, Reel, Whatsapp, Instagram, Counter, AboutUs };
+export { Header, HeroSection, Service, Reel, Whatsapp, Instagram, Counter, AboutUs, Footer, FilterSection };
