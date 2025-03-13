@@ -7,7 +7,7 @@
     gap: 20px;
     text-align: center;
     padding-top: 73px;
-    background: linear-gradient(#00000089, #00000089), url("../src/assets/images/servicios-bm.webp") center/cover fixed; 
+    background: linear-gradient(#00000089, #00000089), url("/static/servicios-bm.webp") center/cover fixed; 
 }
 
 .hero h2 {

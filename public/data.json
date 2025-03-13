@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "image": "../src/assets/images/agile.jpg",
+        "image": "/static/agile.jpg",
         "name": "Chevrolet Ágile Ls",
         "condition":"usado",
         "price": 9500,
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "image": "../src/assets/images/cruze.jpg",
+        "image": "/static/cruze.jpg",
         "name": "Chevrolet Cruze LTZ Plus",
         "condition":"usado",
         "price": 19500,
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "image": "../src/assets/images/Volskwagenup.jpg",
+        "image": "/static/Volskwagenup.jpg",
         "name": "VolksWagen Up 1.0 High",
         "condition":"usado",
         "price": 8900,
@@ -34,7 +34,7 @@
     },
     {
         "id": 4,
-        "image": "../src/assets/images/peugeot.jpg",
+        "image": "/static/peugeot.jpg",
         "name": "Peugeot 2008 Allure",
         "condition":"usado",
         "price": 15900,
@@ -45,7 +45,7 @@
     },
     {
         "id": 5,
-        "image": "../src/assets/images/Volskwagenpassat.jpg",
+        "image": "/static/Volskwagenpassat.jpg",
         "name": "VolksWagen Passat tfsi",
         "condition":"usado",
         "price": 9500,
@@ -56,7 +56,7 @@
     },
     {
         "id": 6,
-        "image": "../src/assets/images/audia1.jpg",
+        "image": "/static/audia1.jpg",
         "name": "Audi A1 1.4 Tfsi",
         "condition":"usado",
         "price": 22000,
@@ -67,7 +67,7 @@
     },
     {
         "id": 7,
-        "image": "../src/assets/images/citroenc3.jpg",
+        "image": "/static/citroenc3.jpg",
         "name": "Citroen C3 90cv Star",
         "condition":"usado",
         "price": 8500,
@@ -78,7 +78,7 @@
     },
     {
         "id": 8,
-        "image": "../src/assets/images/ford ka.jpg",
+        "image": "/static/ford ka.jpg",
         "name": "Ford Ka 1.5 S",
         "condition":"usado",
         "price": 11500,
@@ -89,7 +89,7 @@
     },
     {
         "id": 9,
-        "image": "../src/assets/images/servicios-bm.jpg",
+        "image": "/static/servicios-bm.jpg",
         "name": "Bmw M235i",
         "condition":"usado",
         "price": 42000,
@@ -100,7 +100,7 @@
     },
     {
         "id": 10,
-        "image": "../src/assets/images/fiatpunto.jpg",
+        "image": "/static/fiatpunto.jpg",
         "name": "Fiat Punto Sporting 1.6 16v",
         "condition":"usado",
         "price": 7000,
@@ -111,7 +111,7 @@
     },
     {
         "id": 11,
-        "image": "../src/assets/images/peugeot.jpg",
+        "image": "/static/peugeot.jpg",
         "name": "Peugeot 207 xs Compact",
         "condition":"usado",
         "price": 4000,
@@ -122,7 +122,7 @@
     },
     {
         "id": 12,
-        "image": "../src/assets/images/Volskwagengol.jpg",
+        "image": "/static/Volskwagengol.jpg",
         "name": "Volskwagen Gol Trend",
         "condition":"usado",
         "price": 9000,
