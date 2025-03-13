@@ -120,8 +120,8 @@
     .header__nav {
         display: none;
         position: absolute;
-        top: 74px;
-        right: 0;
+        top: 70px;
+        left: 0;
         background: white;
         width: 100%;
         padding: 10px 0;

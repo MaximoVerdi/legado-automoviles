@@ -4,9 +4,9 @@ import "../index.css"
 import '@fontsource/vazirmatn';
 import '@fontsource/vazirmatn/700.css';
 import "boxicons/css/boxicons.min.css";
-import BmVideo from "../../../assets/Bm.webm";
-import UpVideo from "../../../assets/Up.webm";
-import AudiVideo from "../../../assets/Audi.webm";
+import BmVideo from "/static/Bm.webm";
+import UpVideo from "/static/Up.webm";
+import AudiVideo from "/static/Audi.webm";
 import { Header, HeroSection, Service, Reel, Whatsapp, Instagram, Counter, AboutUs, Footer, FAQ } from "../componentes.jsx"
 
 const Home = () => {
