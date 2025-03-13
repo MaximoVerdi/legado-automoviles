@@ -1,0 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "../pages/home.jsx"
+import { Contact } from "../pages/contact.jsx";
+import { Stock } from "../pages/stock.jsx";
+
+const Router = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/stock" element={<Stock />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export { Router };

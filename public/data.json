@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "image": "../src/assets/images/agile.jpg",
+        "name": "Chevrolet Ágile Ls",
+        "condition":"usado",
+        "price": 9500,
+        "year": 2013,
+        "mileage": 60000,
+        "location": "Capital Federal",
+        "brand": "chevrolet"
+    },
+    {
+        "id": 2,
+        "image": "../src/assets/images/cruze.jpg",
+        "name": "Chevrolet Cruze LTZ Plus",
+        "condition":"usado",
+        "price": 19500,
+        "year": 2018,
+        "mileage": 27000,
+        "location": "Capital Federal",
+        "brand": "chevrolet"
+    },
+    {
+        "id": 3,
+        "image": "../src/assets/images/Volskwagenup.jpg",
+        "name": "VolksWagen Up 1.0 High",
+        "condition":"usado",
+        "price": 8900,
+        "year": 2014,
+        "mileage": 112000,
+        "location": "Capital Federal",
+        "brand": "volkswagen"
+    },
+    {
+        "id": 4,
+        "image": "../src/assets/images/peugeot.jpg",
+        "name": "Peugeot 2008 Allure",
+        "condition":"usado",
+        "price": 15900,
+        "year": 2020,
+        "mileage": 57000,
+        "location": "Capital Federal",
+        "brand": "peugeot"
+    },
+    {
+        "id": 5,
+        "image": "../src/assets/images/Volskwagenpassat.jpg",
+        "name": "VolksWagen Passat tfsi",
+        "condition":"usado",
+        "price": 9500,
+        "year": 2010,
+        "mileage": 131000,
+        "location": "Capital Federal",
+        "brand": "volkswagen"
+    },
+    {
+        "id": 6,
+        "image": "../src/assets/images/audia1.jpg",
+        "name": "Audi A1 1.4 Tfsi",
+        "condition":"usado",
+        "price": 22000,
+        "year": 2018,
+        "mileage": 114546,
+        "location": "Capital Federal",
+        "brand": "audi"
+    },
+    {
+        "id": 7,
+        "image": "../src/assets/images/citroenc3.jpg",
+        "name": "Citroen C3 90cv Star",
+        "condition":"usado",
+        "price": 8500,
+        "year": 2017,
+        "mileage": 97240,
+        "location": "Capital Federal",
+        "brand": "citroen"
+    },
+    {
+        "id": 8,
+        "image": "../src/assets/images/ford ka.jpg",
+        "name": "Ford Ka 1.5 S",
+        "condition":"usado",
+        "price": 11500,
+        "year": 2017,
+        "mileage": 75250,
+        "location": "Capital Federal",
+        "brand": "ford"
+    },
+    {
+        "id": 9,
+        "image": "../src/assets/images/servicios-bm.jpg",
+        "name": "Bmw M235i",
+        "condition":"usado",
+        "price": 42000,
+        "year": 2017,
+        "mileage": 76900,
+        "location": "Capital Federal",
+        "brand": "bmw"
+    },
+    {
+        "id": 10,
+        "image": "../src/assets/images/fiatpunto.jpg",
+        "name": "Fiat Punto Sporting 1.6 16v",
+        "condition":"usado",
+        "price": 7000,
+        "year": 2014,
+        "mileage": 86000,
+        "location": "Capital Federal",
+        "brand": "fiat"
+    },
+    {
+        "id": 11,
+        "image": "../src/assets/images/peugeot.jpg",
+        "name": "Peugeot 207 xs Compact",
+        "condition":"usado",
+        "price": 4000,
+        "year": 2009,
+        "mileage": 138000,
+        "location": "Capital Federal",
+        "brand": "peugeot"
+    },
+    {
+        "id": 12,
+        "image": "../src/assets/images/Volskwagengol.jpg",
+        "name": "Volskwagen Gol Trend",
+        "condition":"usado",
+        "price": 9000,
+        "year": 2020,
+        "mileage": 83000,
+        "location": "Capital Federal",
+        "brand": "volkswagen"
+    }
+]

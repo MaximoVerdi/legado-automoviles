@@ -1,0 +1,142 @@
+.header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    padding: 1em 3em;
+    transition: all 0.5s ease;
+    background-color: #fff;
+}
+
+.header.scrolled {
+    background-color: var(--color-azul-oscuro);
+    backdrop-filter: blur(20px);
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.235);
+}
+
+.header.scrolled .header__nav.open .header__nav-item a {
+    color: var(--color-azul);
+}
+
+.header.scrolled .header__nav .header__nav-item a {
+    color: #fff;
+}
+
+.header .header__nav.open .header__nav-item {
+    list-style: none;
+}
+
+
+
+.header.scrolled .header__logo span, 
+.header.scrolled .header__nav-item a,
+.header.scrolled .header__logo a {
+    color: white;
+}
+
+.header__logo a span {
+    font-size: 1.1em;
+    color: var(--color-azul);
+    user-select: none;
+    text-wrap: wrap;
+    font-weight: bold;
+}
+
+.header__logo a {
+    font-size: 1.5em;
+    color: var(--color-azul);
+    user-select: none;
+    text-wrap: wrap;
+    text-decoration: none;
+}
+
+
+/* Menú de navegación */
+.header__nav {
+    display: flex;
+    
+}
+
+.header__nav-list {
+    display: flex;
+    gap: 40px;
+    
+}
+
+.header__nav-item a {
+    text-decoration: none;
+    color: var(--color-azul);
+    font-weight: 600;
+}
+
+/* Botón hamburguesa */
+.header__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.header.scrolled .header__toggle div {
+    background-color: white !important;
+}
+
+.header__toggle div {
+    width: 30px;
+    height: 4px;
+    background: var(--color-azul);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Animación del botón hamburguesa */
+.header__toggle.open div:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+
+.header__toggle.open div:nth-child(2) {
+    opacity: 0;
+}
+
+.header__toggle.open div:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Responsive */
+@media (max-width: 858px) {
+    .header__nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        
+    }
+
+    .header__nav.open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__nav-list {
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+
+    .header__toggle {
+        display: flex;
+    }
+}
