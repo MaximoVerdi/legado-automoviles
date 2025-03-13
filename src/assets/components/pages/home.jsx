@@ -16,9 +16,9 @@ const Home = () => {
     <Header />
     <HeroSection />
     <div className='service'>
-      <Service p="Publicamos" span="100% gratis!" img="src/assets/images/publish.webp" alt="Publicamos tu auto gratis"/>
-      <Service p="Amplia variedad" span="en stock" img="src/assets/images/stock.webp" alt="Amplia la variedad en stock"/>
-      <Service p="Cotiza tu" span="vehículo usado!" img="src/assets/images/cotiza.webp" alt="Cotiza tu vehículo usado"/>
+      <Service p="Publicamos" span="100% gratis!" img="/static/publish.webp" alt="Publicamos tu auto gratis"/>
+      <Service p="Amplia variedad" span="en stock" img="/static/stock.webp" alt="Amplia la variedad en stock"/>
+      <Service p="Cotiza tu" span="vehículo usado!" img="/static/cotiza.webp" alt="Cotiza tu vehículo usado"/>
     </div>
     <div className='reels-section'>
         <h2>Vende tu auto con nosotros</h2>
