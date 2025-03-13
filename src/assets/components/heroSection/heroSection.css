@@ -60,3 +60,17 @@
     transform: skewY(0deg);
     transform-origin: top right;
   }
+
+@media screen and (max-width: 769px) {
+    .hero p {
+        width: 60%;
+        text-wrap: balance;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hero p {
+        width: 60%;
+        text-wrap: balance;
+    }
+}

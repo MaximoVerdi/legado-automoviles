@@ -25,7 +25,7 @@
 }
 
 .header.scrolled .header__nav .header__nav-item a {
-    color: #fff;
+    color: #fff !important; 
 }
 
 .header .header__nav.open .header__nav-item {
@@ -44,7 +44,7 @@
     font-size: 1.1em;
     color: var(--color-azul);
     user-select: none;
-    text-wrap: wrap;
+    text-wrap: nowrap;
     font-weight: bold;
 }
 
@@ -52,7 +52,7 @@
     font-size: 1.5em;
     color: var(--color-azul);
     user-select: none;
-    text-wrap: wrap;
+    text-wrap: nowrap;
     text-decoration: none;
 }
 
@@ -60,7 +60,6 @@
 /* Menú de navegación */
 .header__nav {
     display: flex;
-    
 }
 
 .header__nav-list {
@@ -96,6 +95,10 @@
     transition: 0.3s;
 }
 
+.header.header.scrolled .header__nav {
+    background-color: var(--color-azul-oscuro);
+}
+
 /* Animación del botón hamburguesa */
 .header__toggle.open div:nth-child(1) {
     transform: rotate(45deg) translateY(10px);
@@ -111,15 +114,18 @@
 
 /* Responsive */
 @media (max-width: 858px) {
+    .header {
+        padding: 1em 2em;
+    }
     .header__nav {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 74px;
         right: 0;
         background: white;
         width: 100%;
         padding: 10px 0;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
         
     }
 
@@ -138,5 +144,6 @@
 
     .header__toggle {
         display: flex;
+        padding: 0;
     }
 }
