@@ -33,7 +33,7 @@ const faqData = [
     answer: "Siempre recomendamos realizar las transacciones en lugares seguros y verificar la documentación del vehículo antes de concretar la compra. Podemos brindarte asesoramiento para hacer la operación de manera segura.",
   },
   {
-    question: "Puedo financiar la compra de un auto??",
+    question: "Puedo financiar la compra de un auto?",
     answer: "Por el momento, no ofrecemos financiamiento directo, pero algunos vendedores pueden aceptar planes de pago. Te recomendamos consultar en cada caso.",
   },
   {
