@@ -66,6 +66,11 @@
   }
 
 @media screen and (max-width: 769px) {
+    
+    .hero {
+        background-attachment: scroll;
+    }
+    
     .hero p {
         width: 60%;
         text-wrap: balance;
