@@ -77,6 +77,8 @@
     .hero {
         background-size: auto;
         background-repeat: initial;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .hero p {
