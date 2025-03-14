@@ -95,9 +95,7 @@
     transition: 0.3s;
 }
 
-.header.header.scrolled .header__nav {
-    background-color: var(--color-azul-oscuro);
-}
+
 
 /* Animación del botón hamburguesa */
 .header__toggle.open div:nth-child(1) {
@@ -145,5 +143,8 @@
     .header__toggle {
         display: flex;
         padding: 0;
+    }
+    .header.header.scrolled .header__nav {
+        background-color: var(--color-azul-oscuro);
     }
 }
