@@ -8,6 +8,9 @@
     text-align: center;
     padding-top: 73px;
     background: linear-gradient(#00000089, #00000089), url("/static/servicios-bm.png") fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hero h2 {
