@@ -7,10 +7,11 @@
     gap: 20px;
     text-align: center;
     padding-top: 73px;
-    background: linear-gradient(#00000089, #00000089), url("/static/servicios-bm.png") fixed;
+    background: linear-gradient(#00000089, #00000089), url("/static/servicios-bm.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .hero h2 {
@@ -72,6 +73,12 @@
 }
 
 @media screen and (max-width: 500px) {
+
+    .hero {
+        background-size: auto;
+        background-repeat: initial;
+    }
+
     .hero p {
         width: 60%;
         text-wrap: balance;
