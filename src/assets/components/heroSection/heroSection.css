@@ -75,9 +75,8 @@
 @media screen and (max-width: 500px) {
 
     .hero {
-        background-size: auto;
+        background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
     }
 
     .hero p {
