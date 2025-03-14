@@ -46,3 +46,22 @@
     line-height: 1.2;
 }
 
+@media  screen and (max-width: 768px) {
+
+    .stats-container {
+    }
+
+    .stat {
+        padding: 0;
+        margin: 40px 0;
+    }
+
+    .stat p:nth-child(1) {
+        font-size: 1.4em;
+    }
+
+    .stat p:nth-child(2) {
+        font-size: 1.4em;
+        margin-top: 15px;
+    }
+}

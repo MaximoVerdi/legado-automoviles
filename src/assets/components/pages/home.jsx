@@ -4,9 +4,9 @@ import "../index.css"
 import '@fontsource/vazirmatn';
 import '@fontsource/vazirmatn/700.css';
 import "boxicons/css/boxicons.min.css";
-import BmVideo from "/static/Bm.webm";
-import UpVideo from "/static/Up.webm";
-import AudiVideo from "/static/Audi.webm";
+import BmVideo from "/videos/Bm.webm";
+import UpVideo from "/videos/Up.webm";
+import AudiVideo from "/videos/Audi.webm";
 import { Header, HeroSection, Service, Reel, Whatsapp, Instagram, Counter, AboutUs, Footer, FAQ } from "../componentes.jsx"
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
     <div className='service'>
       <Service p="Publicamos" span="100% gratis!" img="/static/publish.webp" alt="Publicamos tu auto gratis"/>
       <Service p="Amplia variedad" span="en stock" img="/static/stock.webp" alt="Amplia la variedad en stock"/>
-      <Service p="Cotiza tu" span="vehículo usado!" img="/static/cotiza.webp" alt="Cotiza tu vehículo usado"/>
+      <Service p="Cotiza tu" span="vehículo usado!" img="/static/cotiza.webp" alt="cotiza tu vehiculo usado"/>
     </div>
     <div className='reels-section'>
         <h2>Vende tu auto con nosotros</h2>
