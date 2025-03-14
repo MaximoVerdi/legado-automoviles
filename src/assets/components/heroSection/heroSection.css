@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     text-align: center;
     padding-top: 73px;
     background: linear-gradient(#00000089, #00000089), url("/static/servicios-bm.png");
@@ -26,6 +26,7 @@
     width: 30%;
     line-height: 25px;
     user-select: none;
+    text-wrap: balance;
 }
 
 .skewed {

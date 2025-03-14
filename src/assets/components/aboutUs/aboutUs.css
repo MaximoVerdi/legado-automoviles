@@ -6,13 +6,12 @@
     gap: 50px;
     padding: 30px;
     background-color: var(--off-white-bg);
-    margin: 20px;
+    margin: 80px 50px;
     border-radius: 20px;
 }
 
 .aboutUs__text {
     flex: 1;
-    max-width: 600px;
 }
 
 .aboutUs__img { 
@@ -32,7 +31,6 @@
     color: #14364c;
     line-height: 1.5;
     margin-top: 20px;
-    text-wrap: balance;
 }
 
 /* Ajustes para la imagen */
@@ -62,10 +60,15 @@
 @media screen and (max-width: 480px) {
     .aboutUs {
         padding: 30px 0;
+        margin: 50px 20px;
     }
 
     .aboutUs__text h2 {
         font-size: 1.5em;
+        text-wrap: balance;
+    }
+
+    .aboutUs__text {
         text-wrap: balance;
     }
 } 

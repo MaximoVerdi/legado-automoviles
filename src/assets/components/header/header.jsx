@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./header.css";
 import { NavItem } from "../navItems/navItem";
 import "../index.css"
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
     return (
         <header className={`header ${scrolled ? "scrolled" : ""}`}>
             <div className="header__logo">
-                <a href="#"><span>Legado</span> Automóviles</a>
+                <Link to="/"><span>Legado</span> Automóviles</Link>
             </div>
 
             {/* Menú de navegación */}

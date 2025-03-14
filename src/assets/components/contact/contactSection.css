@@ -1,9 +1,9 @@
 .contact-form {
-    height: 90.5vh;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     place-content: center;
-    background-color: #f2f4ff;
+    background-color: var(--background-card-color);
     color: #101b2b;
   }
   
