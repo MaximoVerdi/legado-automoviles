@@ -1,31 +1,36 @@
 /* Estilos generales */
-
 .stock-title {
-    width: 100%;
-    text-align: center;
-    margin-top: 150px;
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.stock-title h1 {
+  font-size: 2em;
 }
 
 .stock-page {
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
-    margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+  gap: 20px;
 }
 
 .stock-section {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f9f9f9;
+  height: max-content;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px 20px 0px 20px;
+  border-radius: 8px;
 }
-  
+
 .filter-container {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 30px;
-  margin: 0 20px; 
 }
 
 .filter-menu {
@@ -33,8 +38,9 @@
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  min-width: 230px;
+  width: 100%;
   max-width: 350px;
+  margin: 0 auto;
 }
 
 .filter-menu h3 {
@@ -140,8 +146,8 @@
 }
 
 .car-card h4 {
-    margin-left: 10px;
-    margin-top: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
 .car-card p {
@@ -153,4 +159,42 @@
 .car-card .car-card__price {
   font-size: 1.3em;
   color: #000;
+}
+
+/* Media Queries para hacerlo responsive */
+@media (min-width: 768px) {
+  .stock-page {
+      flex-direction: row;
+
+  }
+
+  .filter-menu {
+      margin: 0;
+  }
+
+  .cars-container {
+      margin-right: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filter-container {
+      flex-direction: column;
+  }
+
+  .filter-menu {
+      max-width: 250px;
+  }
+
+  .cars-container {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (max-width: 769px) {
+
+  .stock-title h1 {
+    font-size: 1.4em;
+  }
+  
 }

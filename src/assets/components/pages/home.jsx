@@ -33,9 +33,9 @@ const Home = () => {
 
     <section id="experience" className="stats">
       <div className="stats-container">
-      <Counter target={58} label="Años de experiencia" />
-      <Counter target={220} label="Clientes satisfechos" />
-      <Counter target={122} label="Vehiculos en stock" />
+      <Counter target={5} label="Años de experiencia" />
+      <Counter target={28} label="Clientes satisfechos" />
+      <Counter target={14} label="Vehiculos en stock" />
       </div>
     </section>
     <AboutUs />
