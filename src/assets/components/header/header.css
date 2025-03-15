@@ -11,6 +11,7 @@
     padding: 1em 3em;
     transition: all 0.5s ease;
     background-color: #fff;
+    box-shadow: 10px 0 10px #00000011;
 }
 
 .header.scrolled {

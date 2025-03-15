@@ -171,6 +171,7 @@ const CarsStockSection = () => {
         <section id="stock" className="stock-section">
 
           <div className="filter-container">
+            <div className='filter-menu-container'>
             <div className="filter-menu">
               <h3>Filtrar por Estado</h3>
               <select id="condition-filter" value={condition} onChange={handleConditionChange}>
@@ -192,6 +193,7 @@ const CarsStockSection = () => {
                 <option value="volkswagen">Volkswagen</option>
                 <option value="renault">Renault</option>
               </select>
+            </div>
             </div>
             <div className="filter-menu">
               <h3>Kilómetros</h3>
