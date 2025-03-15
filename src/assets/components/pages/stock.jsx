@@ -16,7 +16,6 @@ const Stock = () => {
         <FAQ />
         <Footer />
         <Whatsapp />
-        <Instagram />
       </div>
   )
 }

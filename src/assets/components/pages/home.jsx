@@ -29,7 +29,6 @@ const Home = () => {
       </div>
     </div>
     <Whatsapp />
-    <Instagram />
 
     <section id="experience" className="stats">
       <div className="stats-container">
