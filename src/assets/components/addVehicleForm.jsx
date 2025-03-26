@@ -29,25 +29,33 @@ const AddVehicleForm = () => {
 
     // Verificar rol de usuario al cargar
     // Verificar rol de usuario al cargar
+// Verificar rol de usuario al cargar - Versión mejorada
 useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+  const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    try {
       if (user?.email) {
-        const adminEmails = import.meta.env.VITE_APP_ADMIN_EMAILS?.split(',') || []; // Asegúrate que coincida con tu .env
-        const normalizedUserEmail = user.email.trim().toLowerCase();
+        // Debug: Verificar variables de entorno
+        console.log("Admin emails:", import.meta.env.VITE_APP_ADMIN_EMAILS);
         
-        setUserIsAdmin(
-          adminEmails.some(
-            email => email.trim().toLowerCase() === normalizedUserEmail
-          )
-        );
+        const adminEmails = (import.meta.env.VITE_APP_ADMIN_EMAILS || "")
+          .split(',')
+          .map(email => email.trim().toLowerCase());
+        
+        const userEmail = user.email.trim().toLowerCase();
+        setUserIsAdmin(adminEmails.includes(userEmail));
       } else {
         setUserIsAdmin(false);
       }
-      setLoadingAuth(false); // Actualiza el estado correcto
-    });
-  
-    return () => unsubscribe();
-  }, []);
+    } catch (error) {
+      console.error("Error verificando admin:", error);
+      setUserIsAdmin(false);
+    } finally {
+      setLoadingAuth(false);
+    }
+  });
+
+  return () => unsubscribe();
+}, []);
     
 
 
@@ -183,7 +191,7 @@ useEffect(() => {
     <div className="vehicle-form-container">
       <h2>Agregar Nuevo Vehículo</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-section">
+        <div className="form-section">  
           <h3>Información Básica</h3>
           <div className="form-group">
             <label>Marca*</label>
