@@ -3,10 +3,13 @@ import "./header.css";
 import { NavItem } from "../navItems/navItem";
 import "../index.css"
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/authContext";
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const { user, logout } = useContext(AuthContext);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -35,6 +38,12 @@ const Header = () => {
                   <NavItem href="/" section="Servicios" closeMenu={closeMenu} />
                   <NavItem href="/stock" section="Stock" closeMenu={closeMenu} />
                   <NavItem href="/contact" section="Contacto" closeMenu={closeMenu} />
+                   {/* Mostrar según autenticación */}
+                   {user ? (
+                      <button className="header__logout" onClick={logout}>Cerrar sesión</button>
+                    ) : (
+                        <NavItem href="/login" section="login" closeMenu={closeMenu} /> 
+                    )}
                 </ul>
             </nav>
 

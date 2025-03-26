@@ -1,3 +1,17 @@
+.admin-panel {
+  background: #f8f9fa;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-panel h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+
 .stock-title {
   width: 100%;
   text-align: center;
@@ -146,12 +160,12 @@ height: 200px;
 object-fit: cover;
 }
 
-.car-card h4 {
+.car-info h3 {
   margin-left: 10px;
   margin-top: 5px;
 }
 
-.car-card p {
+.car-info p {
 margin: 5px 10px;
 font-size: 14px;
 color: #555;

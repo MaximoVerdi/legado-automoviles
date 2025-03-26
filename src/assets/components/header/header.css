@@ -37,7 +37,8 @@
 
 .header.scrolled .header__logo span, 
 .header.scrolled .header__nav-item a,
-.header.scrolled .header__logo a {
+.header.scrolled .header__logo a,
+.header.scrolled .header__logout {
     color: white;
 }
 
@@ -148,4 +149,18 @@
     .header.header.scrolled .header__nav {
         background-color: var(--color-azul-oscuro);
     }
+}
+
+
+.header__logout {
+    font-size: 1em;
+    color: var(--color-azul);
+    user-select: none;
+    text-wrap: nowrap;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
 }
