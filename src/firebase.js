@@ -1,16 +1,13 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+// Importaciones
+import { initializeApp, getApps, deleteApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore"; // Añade esto
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Configuración de Firebase
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
-  authDomain: "legado-automoviles.web.app",
+  authDomain: "legado-automoviles.firebaseapp.com", // ¡Cambiado a firebaseapp.com!
   projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
   storageBucket: import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_APP_FIREBASE_MESSAGING_SENDER_ID,
@@ -18,10 +15,19 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Solución para caché de Firebase
+let app;
+const apps = getApps();
+if (apps.length > 0) {
+  app = apps[0];
+} else {
+  app = initializeApp(firebaseConfig);
+}
+
+// Inicialización de servicios
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
-export const db = getFirestore(app); // Exporta Firestore
+const db = getFirestore(app);
 
-export { auth };
+// Exportaciones
+export { auth, db, analytics };
