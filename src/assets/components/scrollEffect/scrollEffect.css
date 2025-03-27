@@ -50,8 +50,6 @@
     font-weight: 600;
 }
 @media  screen and (max-width: 768px) {
-
-
     .stat {
         padding: 0;
         margin: 40px 0;
@@ -64,5 +62,12 @@
     .stat p:nth-child(2) {
         font-size: 1.4em;
         margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .stats-container {
+        display: grid;
+        
     }
 }

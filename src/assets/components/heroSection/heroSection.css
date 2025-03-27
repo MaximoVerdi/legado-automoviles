@@ -54,7 +54,12 @@
 }
 
 @media screen and (max-width: 500px) {
+    .hero h2 {
+        font-size: 2.2em;
+    }
+
     .hero p {
-        width: 70%;
+        width: 90%;
+        font-size: .9em;
     }
 }

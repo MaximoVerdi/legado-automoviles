@@ -34,9 +34,6 @@ useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, async (user) => {
     try {
       if (user?.email) {
-        // Debug: Verificar variables de entorno
-        console.log("Admin emails:", import.meta.env.VITE_APP_ADMIN_EMAILS);
-        
         const adminEmails = (import.meta.env.VITE_APP_ADMIN_EMAILS || "")
           .split(',')
           .map(email => email.trim().toLowerCase());

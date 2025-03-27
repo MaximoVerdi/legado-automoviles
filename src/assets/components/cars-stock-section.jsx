@@ -230,10 +230,9 @@ const CarsStockSection = () => {
                 )}
                 <div className="car-info">
                   <h3>{car.brand} {car.model}</h3>
-                  <p className="car-price">${car.price.toLocaleString('es-AR')}</p>
-                  <p>{car.year} | {car.mileage.toLocaleString('es-AR')} km</p>
+                  <p className="car-price">US${car.price.toLocaleString('es-AR')}</p>
+                  <p className='car-year'>{car.year} | {car.mileage.toLocaleString('es-AR')} km</p>
                   <p>{car.location}</p>
-                  <p className="car-condition">{car.condition}</p>
                 </div>
               </div>
             ))
