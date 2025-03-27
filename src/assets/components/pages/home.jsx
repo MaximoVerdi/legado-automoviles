@@ -21,7 +21,7 @@ const Home = () => {
       <Service p="Cotiza tu" span="vehículo usado!" img="/static/cotiza.webp" alt="cotiza tu vehiculo usado"/>
     </div>
     <div className='reels-section'>
-        <h2>Vende tu auto con nosotros</h2>
+        <h2>Vendé tu auto con nosotros</h2>
       <div className='reels'>
         <Reel video={AudiVideo} alt="Video de ejemplo" />
         <Reel video={UpVideo} alt="Video de ejemplo" />

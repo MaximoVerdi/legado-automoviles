@@ -1,8 +1,24 @@
 {
-  "headers": [{
-    "source": "**",
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "headers": [
-      { "key": "Access-Control-Allow-Origin", "value": "*" }
+      {
+        "source": "**",
+        "headers": [
+          { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
-  }]
+  }
 }
