@@ -184,7 +184,7 @@ console.log("Should show AddForm:", isAdmin && !editingCar);
           />
         )}
       <div className='stock-title'>
-        <h1>Encontrá tu próximo auto usado en nuestro catálogo</h1>
+        <h1>Encontrá tu próximo auto en nuestro catálogo</h1>
       </div>
       <div className='stock-page'>
         <section className="stock-section">
@@ -251,7 +251,7 @@ console.log("Should show AddForm:", isAdmin && !editingCar);
               </div>
               <div className="filter-buttons">
                 <button onClick={applyFilters}>Filtrar</button>
-                <button onClick={clearFilters}>Limpiar Filtros</button>
+                <button className='clear-filters-button' onClick={clearFilters}>Limpiar Filtros</button>
               </div>
             </div>
           </div>

@@ -49,11 +49,11 @@ strong {
 
 
 .hero__btn {
+    padding: 5px 20px;
     border: 2px solid var(--color-azul);
     border-radius: 30px;
     background-color: transparent;
     color: #fff;
-    padding: 5px 20px;
     font-size: 1em;
     cursor: pointer;
     text-decoration: none;
