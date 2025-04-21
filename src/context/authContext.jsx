@@ -1,4 +1,3 @@
-// src/context/AuthContext.jsx
 import { createContext, useContext, useEffect, useState } from "react";
 import { 
   auth, 
@@ -9,27 +8,21 @@ import {
   signOut,
   onAuthStateChanged 
 } from "firebase/auth";
-import { 
-  collection, 
-  query, 
-  where, 
-  getDocs 
-} from "firebase/firestore";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false); // Estado separado para admin
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // 1. Manejo de autenticación
+  // 1. Función de login
   const login = async (email, password) => {
     try {
       setLoading(true);
       setError(null);
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      setUser(userCredential.user);
       return userCredential.user;
     } catch (err) {
       setError(err.message);
@@ -39,30 +32,10 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // 2. Función de logout
   const logout = async () => {
     try {
       await signOut(auth);
-      setUser(null);
-    } catch (err) {
-      setError(err.message);
-      throw err;
-    }
-  };
-
-  // 2. Consultas a Firestore (ejemplo con vehículos)
-  const getVehiculos = async (maxPrice = 10000) => {
-    try {
-      if (!user) throw new Error("Usuario no autenticado");
-      
-      const q = query(
-        collection(db, "vehiculos"), 
-        where("precio", "<=", maxPrice)
-      );
-      const snapshot = await getDocs(q);
-      return snapshot.docs.map(doc => ({ 
-        id: doc.id, 
-        ...doc.data() 
-      }));
     } catch (err) {
       setError(err.message);
       throw err;
@@ -71,22 +44,48 @@ export const AuthProvider = ({ children }) => {
 
   // 3. Observer de estado de autenticación
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
-      setLoading(false);
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      try {
+        if (currentUser) {
+          // Lista de emails admin (puedes mover esto a variables de entorno si prefieres)
+          const adminEmails = [
+            "maximoverdi21@gmail.com",
+            "machuverdi@gmail.com"
+          ].map(e => e.toLowerCase());
+          
+          const userEmail = currentUser.email.toLowerCase();
+          
+          // Verificar si es admin
+          setIsAdmin(adminEmails.includes(userEmail));
+          setUser(currentUser);
+          
+          console.log(`Usuario ${userEmail} es admin:`, adminEmails.includes(userEmail)); // Debug
+        } else {
+          setUser(null);
+          setIsAdmin(false);
+        }
+      } catch (error) {
+        console.error("Error en auth observer:", error);
+        setUser(null);
+        setIsAdmin(false);
+      } finally {
+        setLoading(false);
+      }
     });
+
     return () => unsubscribe();
   }, []);
 
+  // 4. Proveedor de contexto
   return (
     <AuthContext.Provider 
       value={{ 
         user,
+        isAdmin, // Asegúrate de incluir isAdmin aquí
         loading,
         error,
         login,
-        logout,
-        getVehiculos
+        logout
       }}
     >
       {!loading && children}
@@ -94,6 +93,7 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
+// Hook personalizado
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {

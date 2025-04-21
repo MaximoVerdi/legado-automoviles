@@ -1,6 +1,5 @@
 import './footer.css'
 import "../index.css"
-import "boxicons/css/boxicons.min.css";
 
 function Footer() {
     return (

@@ -43,6 +43,22 @@
     transform-origin: top right;
 }
 
+strong {
+    font-weight: bold;
+}
+
+
+.hero__btn {
+    border: 2px solid var(--color-azul);
+    border-radius: 30px;
+    background-color: transparent;
+    color: #fff;
+    padding: 5px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
     .hero {
         background-attachment: scroll;

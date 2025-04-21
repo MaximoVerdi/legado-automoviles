@@ -4,6 +4,7 @@ import "./heroSection.css"
 import "../index.css";
 import '@fontsource/montserrat'; // Fuente normal
 import '@fontsource/montserrat/700.css'; // Fuente en negrita
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const typedRef = useRef(null);
@@ -11,7 +12,7 @@ const HeroSection = () => {
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
       strings: [
-        "<strong>Compra</strong> tu usado!", 
+        "<strong style:color=red>Compra</strong> tu usado!", 
         "<strong>Vendemos</strong> tu vehículo"
       ],
       typeSpeed: 80,
@@ -33,7 +34,7 @@ const HeroSection = () => {
         <span ref={typedRef}></span>
       </h2>
       <p id="service__item">Realizamos toda la preparación previa a la venta y los trámites legales necesarios!</p>
-      {/* <button className="hero__btn">Contactanos</button> */}
+      <Link to={"/stock"} className="hero__btn">Ver vehiculos en stock</Link> 
 
     </section>
   );

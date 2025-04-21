@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import "../index.css"
 import '@fontsource/vazirmatn';
 import '@fontsource/vazirmatn/700.css';
-import "boxicons/css/boxicons.min.css";
 import BmVideo from "/videos/Bm.mp4";
 import UpVideo from "/videos/Up.mp4";
 import AudiVideo from "/videos/Audi.mp4";
@@ -18,7 +17,7 @@ const Home = () => {
     <div className='service'>
       <Service p="Publicamos" span="100% gratis!" img="/static/publish.webp" alt="Publicamos tu auto gratis"/>
       <Service p="Amplia variedad" span="en stock" img="/static/stock.webp" alt="Amplia la variedad en stock"/>
-      <Service p="Cotiza tu" span="vehículo usado!" img="/static/cotiza.webp" alt="cotiza tu vehiculo usado"/>
+      <Service p="Cotiza tu" span="vehículo usado!" img="/static/cotiza.webp" alt="cotiza tu vehículo usado"/>
     </div>
     <div className='reels-section'>
         <h2>Vendé tu auto con nosotros</h2>
@@ -34,7 +33,7 @@ const Home = () => {
       <div className="stats-container">
       <Counter target={5} label="Años de experiencia" />
       <Counter target={28} label="Clientes satisfechos" />
-      <Counter target={14} label="Vehiculos en stock" />
+      <Counter target={14} label="Vehículos en stock" />
       </div>
     </section>
     <AboutUs />

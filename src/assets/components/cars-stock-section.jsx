@@ -3,8 +3,11 @@ import "./cars-stock-section.css";
 import { collection, onSnapshot, query, where } from 'firebase/firestore';
 import { db } from '../../firebase';
 import AddVehicleForm from './addVehicleForm';
+import EditVehicleForm from './EditVehicleForm/editVehicleForm';
+import { useAuth } from "../../context/authContext"
 
 const CarsStockSection = () => {
+  const { user, isAdmin } = useAuth();
   const [condition, setCondition] = useState('all');
   const [brand, setBrand] = useState('all');
   const [mileageOptions, setMileageOptions] = useState({
@@ -19,6 +22,8 @@ const CarsStockSection = () => {
   const [filteredCars, setFilteredCars] = useState([]);
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [editingCar, setEditingCar] = useState(null);
+
 
   // Cargar los autos desde Firebase con actualización en tiempo real
   useEffect(() => {
@@ -131,14 +136,53 @@ const CarsStockSection = () => {
     setFilteredCars(cars);
   };
 
+  
+  // Efectos para edicion de vehículos
+  
+  const handleDeleteCar = async (cardId) => {
+    if (window.confirm("¿Estás seguro de que quieres eliminar este vehículo?")) { 
+      try {
+        await deleteDoc(doc(db, "vehicles", cardId));
+      } catch (error) {
+        console.error("Error al eliminar el vehículo:", error);
+        alert(`Error al eliminar el vehículo: ${error.message}`);
+      }
+    }
+  }
+  
+  const handleEditCar = (car) => {
+    setEditingCar(car);
+  };
+  
+  const handleCancelEdit = () => {
+    setEditingCar(null);
+  };
+  
+  const handleUpdateCar = () => {
+    setEditingCar(null);
+  };
+  
   if (loading) {
     return <div className="loading-container">Cargando autos...</div>;
   }
 
+  console.log("User object:", user);
+console.log("isAdmin value:", isAdmin);
+console.log("Editing car state:", editingCar);
+console.log("Should show AddForm:", isAdmin && !editingCar);
+
+  
   return (
     <>
 
-      <AddVehicleForm />
+      {isAdmin && !editingCar && <AddVehicleForm />}
+        {isAdmin && editingCar && (
+          <EditVehicleForm 
+            carData={editingCar} 
+            onCancel={handleCancelEdit}
+            onSuccess={handleUpdateCar}
+          />
+        )}
       <div className='stock-title'>
         <h1>Encontrá tu próximo auto usado en nuestro catálogo</h1>
       </div>
@@ -229,10 +273,17 @@ const CarsStockSection = () => {
                   <img src="/placeholder-car.jpg" alt="Auto sin imagen" />
                 )}
                 <div className="car-info">
-                  <h3>{car.brand} {car.model}</h3>
+                  <h3>{car.brand} {car.model} {isAdmin && (
+                    <div className="admin-actions">
+                      <button onClick={() => handleEditCar(car)}>Editar</button>
+                      <button onClick={() => handleDeleteCar(car.id)}>Eliminar</button>
+                    </div>
+                  )}</h3>
                   <p className="car-price">US${car.price.toLocaleString('es-AR')}</p>
                   <p className='car-year'>{car.year} | {car.mileage.toLocaleString('es-AR')} km</p>
                   <p>{car.location}</p>
+
+                  
                 </div>
               </div>
             ))

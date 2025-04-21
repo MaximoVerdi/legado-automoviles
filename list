@@ -1,0 +1,75 @@
+./gcloud auth login/google-cloud-sdk/.install/bq.manifest:platform/bq/auth/gcloud_credential_loader.py
+./gcloud auth login/google-cloud-sdk/.install/bq.manifest:platform/bq/gcloud_wrapper/bq_to_gcloud_config_classes.py
+./gcloud auth login/google-cloud-sdk/.install/bq.manifest:platform/bq/gcloud_wrapper/gcloud_runner.py
+./gcloud auth login/google-cloud-sdk/.install/bq.manifest:platform/bq/utils/bq_gcloud_utils.py
+./gcloud auth login/google-cloud-sdk/.install/core-win.manifest:bin/docker-credential-gcloud.cmd
+./gcloud auth login/google-cloud-sdk/.install/core-win.manifest:bin/gcloud-ps.ps1
+./gcloud auth login/google-cloud-sdk/.install/core-win.manifest:bin/gcloud.cmd
+./gcloud auth login/google-cloud-sdk/.install/core-win.manifest:bin/gcloud.ps1
+./gcloud auth login/google-cloud-sdk/.install/core-win.manifest:bin/git-credential-gcloud.cmd
+./gcloud auth login/google-cloud-sdk/.install/core-win.snapshot.json:        "gcloud-deps",
+./gcloud auth login/google-cloud-sdk/.install/core.manifest:bin/gcloud
+./gcloud auth login/google-cloud-sdk/.install/core.manifest:data/cli/gcloud_completions.py
+./gcloud auth login/google-cloud-sdk/.install/core.manifest:lib/gcloud.py
+./gcloud auth login/google-cloud-sdk/.install/core.manifest:lib/googlecloudsdk/command_lib/storage/resources/gcloud_full_resource_formatter.py
+./gcloud auth login/google-cloud-sdk/.install/core.manifest:lib/googlecloudsdk/command_lib/util/gcloudignore.py
+./gcloud auth login/google-cloud-sdk/.install/core.manifest:lib/googlecloudsdk/gcloud_main.py
+./gcloud auth login/google-cloud-sdk/.install/core.manifest:lib/surface/meta/gcloud_command_vocabulary.txt
+./gcloud auth login/google-cloud-sdk/.install/core.manifest:lib/surface/meta/lint_gcloud_commands.py
+./gcloud auth login/google-cloud-sdk/.install/core.manifest:lib/surface/meta/list_gcloud.py
+./gcloud auth login/google-cloud-sdk/.install/core.manifest:lib/surface/topic/gcloudignore.py
+./gcloud auth login/google-cloud-sdk/.install/core.snapshot.json:        "gcloud-deps",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c-windows-x86_64.manifest:bin/gcloud-crc32c.exe
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c-windows-x86_64.manifest:platform/gcloud-crc32c_licenses/LICENSES.txt
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c-windows-x86_64.snapshot.json:        "gcloud-crc32c"
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c-windows-x86_64.snapshot.json:      "id": "gcloud-crc32c-windows-x86_64",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c.snapshot.json:        "gcloud-crc32c-darwin-arm",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c.snapshot.json:        "gcloud-crc32c-darwin-x86_64",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c.snapshot.json:        "gcloud-crc32c-linux-arm",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c.snapshot.json:        "gcloud-crc32c-linux-x86",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c.snapshot.json:        "gcloud-crc32c-linux-x86_64",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c.snapshot.json:        "gcloud-crc32c-windows-x86",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c.snapshot.json:        "gcloud-crc32c-windows-x86_64"
+./gcloud auth login/google-cloud-sdk/.install/gcloud-crc32c.snapshot.json:      "id": "gcloud-crc32c",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps-windows-x86_64.snapshot.json:        "gcloud-deps"
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps-windows-x86_64.snapshot.json:        "description": "Set of third_party gcloud cli dependencies.",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps-windows-x86_64.snapshot.json:        "display_name": "gcloud cli dependencies (Platform Specific)"
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps-windows-x86_64.snapshot.json:      "id": "gcloud-deps-windows-x86_64",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.manifest:lib/third_party/gcloud_crcmod/LICENSE
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.manifest:lib/third_party/gcloud_crcmod/__init__.py
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.manifest:lib/third_party/gcloud_crcmod/python2/__init__.py
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.manifest:lib/third_party/gcloud_crcmod/python2/_crcfunpy.py
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.manifest:lib/third_party/gcloud_crcmod/python2/crcmod.py
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.manifest:lib/third_party/gcloud_crcmod/python2/predefined.py
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.manifest:lib/third_party/gcloud_crcmod/python3/__init__.py
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.manifest:lib/third_party/gcloud_crcmod/python3/_crcfunpy.py
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.manifest:lib/third_party/gcloud_crcmod/python3/crcmod.py
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.manifest:lib/third_party/gcloud_crcmod/python3/predefined.py
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.snapshot.json:        "gcloud-deps-darwin-x86",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.snapshot.json:        "gcloud-deps-darwin-x86_64",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.snapshot.json:        "gcloud-deps-linux-x86",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.snapshot.json:        "gcloud-deps-linux-x86_64",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.snapshot.json:        "gcloud-deps-windows-x86",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.snapshot.json:        "gcloud-deps-windows-x86_64"
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.snapshot.json:        "description": "Set of third_party gcloud cli dependencies.",
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.snapshot.json:        "display_name": "gcloud cli dependencies"
+./gcloud auth login/google-cloud-sdk/.install/gcloud-deps.snapshot.json:      "id": "gcloud-deps",
+./gcloud auth login/google-cloud-sdk/.install/gcloud.snapshot.json:        "description": "Default set of gcloud commands.",
+./gcloud auth login/google-cloud-sdk/.install/gcloud.snapshot.json:        "display_name": "Default set of gcloud commands"
+./gcloud auth login/google-cloud-sdk/.install/gcloud.snapshot.json:      "id": "gcloud",
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/.default_components:["core", "gcloud-deps", "bq", "gcloud", "gcloud-crc32c", "gsutil"]
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/bootstrapping.py:import gcloud
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/bootstrapping.py:sys.path = gcloud.reorder_sys_path(sys.path)
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/bootstrapping.py:      being run (i.e. gcloud.foo.bar).
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/bq.py:      'init': 'To authenticate, run gcloud auth.',
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/bq.py:    print('Args passed from gcloud:', args)
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/gsutil.py:  # Tell gsutil whether gcloud analytics collection is enabled.
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/gsutil.py:        'update': 'To update, run: gcloud components update',
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/install.py:from googlecloudsdk import gcloud_main
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/install.py:_CLI = gcloud_main.CreateCLI([])
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/install.py:    gcloud config set disable_usage_reporting false
+./gcloud auth login/google-cloud-sdk/bin/bootstrapping/install.py:  # Install the OS specific wrapper scripts for gcloud and any pre-configured
+Binary file ./gcloud auth login/google-cloud-sdk/bin/bootstrapping/__pycache__/bootstrapping.cpython-311.pyc matches
+Binary file ./gcloud auth login/google-cloud-sdk/bin/bootstrapping/__pycache__/bq.cpython-311.pyc matches
+Binary file ./gcloud auth login/google-cloud-sdk/bin/bootstrapping/__pycache__/gsutil.cpython-311.pyc matches
+Binary file ./gcloud auth login/google-cloud-sdk

@@ -23,9 +23,9 @@
     text-decoration: none;
 }
 
-.whatsapp-container i {
+.whatsapp-container img {
     color: #fff;
-    font-size: 3em;
+    height: 40px;
 }
 
 .whatsapp-container:hover {

@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db } from "../../firebase";
-import ImageUploader from "./imageUploader";
-import "./addVehicleForm.css";
+import { doc, updateDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../../../firebase";
+import ImageUploader from "../imageUploader";
+import "../addVehicleForm.css";
 
-
-const AddVehicleForm = () => {
+const EditVehicleForm = ({ carData, onCancel, onSuccess }) => {
     const [loading, setLoading] = useState(false);
     const [featureInput, setFeatureInput] = useState("");
     const [formData, setFormData] = useState({
@@ -23,129 +22,107 @@ const AddVehicleForm = () => {
         imageUrls: []
     });
 
-
-
-
-  // Manejar cambios en los inputs
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  // Manejar subida de imágenes
-  const handleImageUpload = (url) => {
-    setFormData(prev => ({
-      ...prev,
-      imageUrls: [...prev.imageUrls, url]
-    }));
-  };
-
-  // Agregar característica
-  const addFeature = () => {
-    if (featureInput && !formData.features.includes(featureInput)) {
-      setFormData(prev => ({
-        ...prev,
-        features: [...prev.features, featureInput]
-      }));
-      setFeatureInput("");
-    }
-  };
-
-  // Remover característica
-  const removeFeature = (feature) => {
-    setFormData(prev => ({
-      ...prev,
-      features: prev.features.filter(f => f !== feature)
-    }));
-  };
-
-  // Remover imagen
-  const removeImage = (url) => {
-    setFormData(prev => ({
-      ...prev,
-      imageUrls: prev.imageUrls.filter(img => img !== url)
-    }));
-  };
-
-  // Enviar formulario
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    if (formData.imageUrls.length === 0) {
-      alert("Sube al menos una imagen");
-      return;
-    }
-  
-    try {
-      setLoading(true);
-  
-      // 1. Preparamos los datos con protección contra undefined/null
-      const vehicleData = {
-        brand: String(formData.brand || ""),
-        model: String(formData.model || ""),
-        year: formData.year ? parseInt(formData.year) : 0,
-        price: formData.price ? parseFloat(formData.price) : 0,
-        mileage: formData.mileage ? parseInt(formData.mileage) : 0,
-        condition: String(formData.condition || "usado"),
-        transmission: String(formData.transmission || "automática"),
-        fuelType: String(formData.fuelType || "nafta"),
-        location: String(formData.location || ""),
-        description: String(formData.description || ""),
-        features: Array.isArray(formData.features) ? formData.features : [],
-        imageUrls: Array.isArray(formData.imageUrls) ? formData.imageUrls : [],
-        createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp(),
-        createdBy: auth.currentUser?.uid || "unknown"
-      };
-  
-      // 2. Limpieza profunda de datos
-      const cleanData = Object.fromEntries(
-        Object.entries(vehicleData)
-          .filter(([_, v]) => v !== undefined && v !== null)
-          .map(([k, v]) => [k, v === "" ? null : v]) 
-      );
-  
-      // 3. Validación final (DEBUG)
-      console.log("Datos a guardar:", JSON.stringify(cleanData, null, 2));
-      for (const [key, value] of Object.entries(cleanData)) {
-        if (value === undefined) {
-          console.error(`Campo problemático: ${key}`);
+    useEffect(() => {
+        if (carData) {
+            setFormData({
+                brand: carData.brand || "",
+                model: carData.model || "",
+                year: carData.year || "",
+                price: carData.price || "",
+                mileage: carData.mileage || "",
+                condition: carData.condition || "usado",
+                transmission: carData.transmission || "automática",
+                fuelType: carData.fuelType || "nafta",
+                location: carData.location || "",
+                description: carData.description || "",
+                features: carData.features || [],
+                imageUrls: carData.imageUrls || []
+            });
         }
-      }
-  
-      // 4. Guardar en Firestore
-      await addDoc(collection(db, "vehicles"), cleanData);
-  
-      // Resetear formulario
-      setFormData({
-        brand: "",
-        model: "",
-        year: "",
-        price: "",
-        mileage: "",
-        condition: "usado",
-        transmission: "automática",
-        fuelType: "nafta",
-        location: "",
-        description: "",
-        features: [],
-        imageUrls: []
-      });
-  
-      alert("¡Vehículo guardado con éxito!");
-    } catch (error) {
-      console.error("Error completo:", error);
-      alert(`Error al guardar: ${error.message}`);
-    } finally {
-      setLoading(false);
-    }
-  };
+    }, [carData]);
 
-  return (
-    <div className="vehicle-form-container">
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleImageUpload = (url) => {
+        setFormData(prev => ({
+            ...prev,
+            imageUrls: [...prev.imageUrls, url]
+        }));
+    };
+
+    const addFeature = () => {
+        if (featureInput && !formData.features.includes(featureInput)) {
+            setFormData(prev => ({
+                ...prev,
+                features: [...prev.features, featureInput]
+            }));
+            setFeatureInput("");
+        }
+    };
+
+    const removeFeature = (feature) => {
+        setFormData(prev => ({
+            ...prev,
+            features: prev.features.filter(f => f !== feature)
+        }));
+    };
+
+    const removeImage = (url) => {
+        setFormData(prev => ({
+            ...prev,
+            imageUrls: prev.imageUrls.filter(img => img !== url)
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        if (formData.imageUrls.length === 0) {
+            alert("Debe haber al menos una imagen");
+            return;
+        }
+    
+        try {
+            setLoading(true);
+    
+            const vehicleData = {
+                brand: String(formData.brand || ""),
+                model: String(formData.model || ""),
+                year: formData.year ? parseInt(formData.year) : 0,
+                price: formData.price ? parseFloat(formData.price) : 0,
+                mileage: formData.mileage ? parseInt(formData.mileage) : 0,
+                condition: String(formData.condition || "usado"),
+                transmission: String(formData.transmission || "automática"),
+                fuelType: String(formData.fuelType || "nafta"),
+                location: String(formData.location || ""),
+                description: String(formData.description || ""),
+                features: Array.isArray(formData.features) ? formData.features : [],
+                imageUrls: Array.isArray(formData.imageUrls) ? formData.imageUrls : [],
+                updatedAt: serverTimestamp()
+            };
+    
+            await updateDoc(doc(db, "vehicles", carData.id), vehicleData);
+            alert("¡Vehículo actualizado con éxito!");
+            onSuccess();
+        } catch (error) {
+            console.error("Error al actualizar:", error);
+            alert(`Error al actualizar: ${error.message}`);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <div className="vehicle-form-container">
+            <h2>Editar Vehículo</h2>
+            <form onSubmit={handleSubmit}>
+            <div className="vehicle-form-container">
       <h2>Agregar Nuevo Vehículo</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-section">  
@@ -324,15 +301,21 @@ const AddVehicleForm = () => {
               ))}
             </div>
         </div>
-
-        <div className="form-actions">
-          <button type="submit" disabled={loading}>
-            {loading ? "Guardando..." : "Guardar Vehículo"}
-          </button>
-        </div>
       </form>
     </div>
-  );
+
+                
+                <div className="form-actions">
+                    <button type="button" onClick={onCancel}>
+                        Cancelar
+                    </button>
+                    <button type="submit" disabled={loading}>
+                        {loading ? "Actualizando..." : "Actualizar Vehículo"}
+                    </button>
+                </div>
+            </form>
+        </div>
+    );
 };
 
-export default AddVehicleForm;
+export default EditVehicleForm;
