@@ -13,11 +13,10 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [isAdmin, setIsAdmin] = useState(false); // Estado separado para admin
+  const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // 1. Función de login
   const login = async (email, password) => {
     try {
       setLoading(true);
@@ -32,7 +31,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // 2. Función de logout
   const logout = async () => {
     try {
       await signOut(auth);
@@ -42,12 +40,10 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // 3. Observer de estado de autenticación
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       try {
         if (currentUser) {
-          // Lista de emails admin (puedes mover esto a variables de entorno si prefieres)
           const adminEmails = [
             "maximoverdi21@gmail.com",
             "machuverdi@gmail.com"
@@ -55,7 +51,6 @@ export const AuthProvider = ({ children }) => {
           
           const userEmail = currentUser.email.toLowerCase();
           
-          // Verificar si es admin
           setIsAdmin(adminEmails.includes(userEmail));
           setUser(currentUser);
           
@@ -76,12 +71,11 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  // 4. Proveedor de contexto
   return (
     <AuthContext.Provider 
       value={{ 
         user,
-        isAdmin, // Asegúrate de incluir isAdmin aquí
+        isAdmin,
         loading,
         error,
         login,
@@ -93,7 +87,6 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Hook personalizado
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
